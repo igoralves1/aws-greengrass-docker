@@ -11,3 +11,8 @@ services:
       dockerfile: Dockerfile
     container_name: aws-iot-greengrass
     image: x86_64/aws-iot-greengrass:2.5.2
+    environment:
+      - PROVISION=true
+    volumes:
+    # Path to the /Users/ialves/.aws/ folder where it can find the .aws/credentials
+    - /Users/ialves/.aws/:/root/.aws/:ro
